@@ -10,16 +10,18 @@ const settingsRoutes = require("./routes/settings.routes");
 
 const app = express();
 
+// Trailing slashes are stripped since browsers never send one in the Origin
+// header, but it's an easy typo to leave one in a pasted env var value.
 const allowedOrigins = (process.env.CLIENT_ORIGIN || "http://localhost:5173")
   .split(",")
-  .map((origin) => origin.trim())
+  .map((origin) => origin.trim().replace(/\/+$/, ""))
   .filter(Boolean);
 
 app.use(
   cors({
     origin: (origin, callback) => {
       // No Origin header (curl, server-to-server, same-origin) — allow.
-      if (!origin || allowedOrigins.includes(origin)) return callback(null, true);
+      if (!origin || allowedOrigins.includes(origin.replace(/\/+$/, ""))) return callback(null, true);
       callback(new Error(`Origin ${origin} is not allowed by CORS`));
     },
   })
