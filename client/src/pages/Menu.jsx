@@ -1,8 +1,16 @@
 import { useEffect, useMemo, useState } from "react";
 import api from "../api/client";
 import MenuCard from "../components/MenuCard";
+import useSEO from "../hooks/useSEO";
 
 export default function Menu() {
+  useSEO({
+    title: "Menu | Dekkan Paradise – Indian Restaurant in El Paso, TX",
+    description:
+      "Full menu at Dekkan Paradise, El Paso's authentic Hyderabadi Indian restaurant — Dum Biryani, tandoori dishes, curries, naan, and more. 100% Halal.",
+    path: "/menu",
+  });
+
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [activeCategory, setActiveCategory] = useState("All");

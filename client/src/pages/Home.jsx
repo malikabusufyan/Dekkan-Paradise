@@ -6,11 +6,19 @@ import MenuCard from "../components/MenuCard";
 import VideoCard from "../components/VideoCard";
 import ReviewCard from "../components/ReviewCard";
 import DeliveryButtons from "../components/DeliveryButtons";
+import useSEO from "../hooks/useSEO";
 
 const ABOUT_TEXT =
   "Welcome to Dekkan Paradise, the first authentic Hyderabadi Indian restaurant in El Paso! We are proud to introduce the Sun City to the rich, royal heritage of South Indian cuisine. Experience our world-famous Dum Biryani, prepared with traditional methods and premium spices, alongside a menu of flavorful, authentic curries crafted all the way from Hyderabad, India. From our kitchen to your table, every dish is 100% Halal and brings the true, aromatic taste of South India to Texas. Join us for an unforgettable dining experience where tradition meets flavor.";
 
 export default function Home() {
+  useSEO({
+    title: "Dekkan Paradise | Hyderabadi Indian Restaurant in El Paso, TX (Halal)",
+    description:
+      "Dekkan Paradise is the first authentic Hyderabadi Indian restaurant in El Paso, Texas. Enjoy our famous Dum Biryani, traditional halal curries, and tandoori dishes. Order online or call today.",
+    path: "/",
+  });
+
   const [featuredItems, setFeaturedItems] = useState([]);
   const [videos, setVideos] = useState([]);
   const [reviews, setReviews] = useState([]);

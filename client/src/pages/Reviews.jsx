@@ -2,8 +2,16 @@ import { useEffect, useState } from "react";
 import api from "../api/client";
 import ReviewCard from "../components/ReviewCard";
 import ReviewForm from "../components/ReviewForm";
+import useSEO from "../hooks/useSEO";
 
 export default function Reviews() {
+  useSEO({
+    title: "Reviews | Dekkan Paradise – Indian Restaurant in El Paso, TX",
+    description:
+      "Read what guests are saying about Dekkan Paradise, El Paso's authentic Hyderabadi Indian restaurant, and share your own experience.",
+    path: "/reviews",
+  });
+
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
 

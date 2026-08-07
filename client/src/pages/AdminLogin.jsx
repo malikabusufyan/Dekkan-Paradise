@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import useSEO from "../hooks/useSEO";
 
 export default function AdminLogin() {
+  useSEO({ title: "Admin Login | Dekkan Paradise", path: "/admin/login", noindex: true });
+
   const { login } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();

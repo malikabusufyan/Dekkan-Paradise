@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import StructuredData from "./components/StructuredData";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Home from "./pages/Home";
 import Menu from "./pages/Menu";
@@ -13,6 +14,7 @@ import AdminDashboard from "./pages/AdminDashboard";
 export default function App() {
   return (
     <div className="app-shell">
+      <StructuredData />
       <Navbar />
       <main className="app-main">
         <Routes>

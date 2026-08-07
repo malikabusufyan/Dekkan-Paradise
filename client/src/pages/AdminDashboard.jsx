@@ -4,6 +4,7 @@ import AdminMenuTab from "./admin/AdminMenuTab";
 import AdminVideosTab from "./admin/AdminVideosTab";
 import AdminReviewsTab from "./admin/AdminReviewsTab";
 import AdminSettingsTab from "./admin/AdminSettingsTab";
+import useSEO from "../hooks/useSEO";
 
 const TABS = [
   { key: "menu", label: "Menu" },
@@ -13,6 +14,8 @@ const TABS = [
 ];
 
 export default function AdminDashboard() {
+  useSEO({ title: "Admin Dashboard | Dekkan Paradise", path: "/admin", noindex: true });
+
   const { username, logout } = useAuth();
   const [activeTab, setActiveTab] = useState("menu");
 

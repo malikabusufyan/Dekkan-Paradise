@@ -1,8 +1,15 @@
 import { useEffect, useState } from "react";
 import api from "../api/client";
 import VideoCard from "../components/VideoCard";
+import useSEO from "../hooks/useSEO";
 
 export default function Gallery() {
+  useSEO({
+    title: "Gallery | Dekkan Paradise – Hyderabadi Indian Restaurant, El Paso TX",
+    description: "Photos and videos from Dekkan Paradise, El Paso's authentic Hyderabadi Indian restaurant.",
+    path: "/gallery",
+  });
+
   const [videos, setVideos] = useState([]);
   const [loading, setLoading] = useState(true);
 

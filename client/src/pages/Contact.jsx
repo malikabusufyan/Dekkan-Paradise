@@ -1,7 +1,15 @@
 import useSettings from "../hooks/useSettings";
 import DeliveryButtons from "../components/DeliveryButtons";
+import useSEO from "../hooks/useSEO";
 
 export default function Contact() {
+  useSEO({
+    title: "Contact & Order | Dekkan Paradise – Indian Restaurant in El Paso, TX",
+    description:
+      "Visit or order from Dekkan Paradise at 5360 N. Mesa St, El Paso, TX. Order online via DoorDash, Uber Eats, or Postmates, or call to place your order.",
+    path: "/contact",
+  });
+
   const { settings, loading } = useSettings();
 
   return (
